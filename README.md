@@ -11,4 +11,4 @@
 - Frontend: HTML, CSS, JavaScript.
 - Hospedagem:  Vercel.
 
-##  [Links  Utilizados](https://docs.google.com/document/d/1ct2PoPs_JDdjFpU7ewL3c4Cu7wpF58WVzXKZGJipJxM/edit)
+##  [Links  Utilizados](https://docs.google.com/document/d/1ct2PoPs_JDdjFpU7ewL3c4Cu7wpF58WVzXKZGJipJxM/edit?usp=sharing)

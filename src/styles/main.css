@@ -43,7 +43,7 @@ span{
 
 /* Configura imagem de fundo para o corpo */
 body {
-    background-image: url("/imagens/background.png");
+    background-image: url("/imagens/teste1.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -169,8 +169,8 @@ main h4{
 }
 
 #SangA,#SangB,#SangAB,#SangO,#tipos-rh{
-    background-color: #fff;
-    background-image: url(/imagens/fundo2.png);
+    background-color:transparent;
+    background-image: url(/imagens/fundo2-vazio.png);
     
    
 }

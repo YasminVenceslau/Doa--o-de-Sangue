@@ -249,3 +249,55 @@ footer a{
 }
 
 
+@media (max-width: 768px) {
+
+body{
+    background-image: none;
+}
+    header div {
+        display: flex; /* Cria um container flexbox */
+        justify-content: center; /* Distribui elementos uniformemente */
+        font-size: 10px;
+    }
+    
+    /* Estiliza o cabeçalho */
+    header {
+       
+        display: flexbox; /* Cria um container flexbox */
+        flex-direction: column;
+        justify-content: center;
+        padding: 5px; /* Adiciona espaço interno */
+        
+    }
+
+    /* Estiliza o botão de lupa */
+    header input, header button {
+       
+        width: 170px; /* Define largura */
+    }
+
+    #super{
+        width: 300px;
+        
+    }
+
+    #resultado .tipos-sangue, #resultado .comoDoar {
+        background-image: none;
+        width: auto;
+    }
+}
+
+@media (min-width: 769px) and (max-width:1024px ){
+    
+    
+    /* Estiliza inputs e botões dentro do cabeçalho */
+    header input, header button {
+
+        width: 100px; /* Define largura */
+    }
+
+    #resultado .comoDoar {
+        
+        width: auto;
+    }
+}

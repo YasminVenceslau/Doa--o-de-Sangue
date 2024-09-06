@@ -117,6 +117,23 @@ main h4{
 
 }
 
+ #motivo{
+
+    text-align: center;
+    
+}
+
+ #motivo h2{
+
+    border-bottom: 1px solid var(--cor-principal);
+    margin-bottom: 16px;
+
+ }
+
+ #motivo p{
+    padding: 5px;
+ }
+
 #topicos{
     display: flex;
     justify-content: center;

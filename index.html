@@ -9,9 +9,9 @@
 <body>
     <header>
         <div ><img src="icones/bloodtype_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt=""><h1> Doação de Sangue</h1></div>
-        <form class="form-header">
+        <section class="form-header">
             <input type="text" id="procurar" placeholder="Descubra">
-            <button id="button-lupa" type="button"><img src="icones/search.svg" alt="Ícone de lupa para iniciar uma pesquisa."></button>
+            <button id="button-lupa" onclick="pesquisar()"><img src="icones/search.svg" alt="Ícone de lupa para iniciar uma pesquisa."></button>
         </form>
         
     </header>
@@ -27,12 +27,12 @@
                 <button onclick="ondeDoar()" >Onde Doar Sangue</button>
                 <button onclick="estoque()">Estoque de Sangue</button>
             </section>
+            <div  id="resposta"></div>
+            <img id="super"   src="imagens/bannercampanha.png" alt="">
+
             
-            <img id="super" src="imagens/bannercampanha.png" alt="">
 
-           
-
-            <div id="resultado"></div>
+            <div id="resultado" ></div>
             <section id="motivo"> 
                 <h2>Porque doar?</h2>
                 <p>A cada doação, você pode ajudar até quatro pessoas. <img src="icones/people.svg" alt="">  <img src="icones/people.svg" alt=""></p>
@@ -57,6 +57,7 @@
     <script src="/src/scripts/main.js"></script>
     <script src="/src/scripts/tiposSang.js"></script>
     <script src="src/scripts/postos.js"></script>
+    <script src="src/scripts/doaçao.js"></script>
     
 
 </body>

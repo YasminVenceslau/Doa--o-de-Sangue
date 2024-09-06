@@ -1,9 +1,19 @@
 const imagem = document.getElementById('super') // Seleciona a imagem que será removida ao carregar um novo conteúdo
+const divResposta = document.getElementById('resposta')
+const divResultado = document.getElementById('resultado')
+
+function remover(){
+    imagem.classList.add('remover')// Remove a imagem existente
+    divResposta.classList.add('remover')
+}
+
+
 
 function sobreSangue(){
 
-    imagem.remove()// Remove a imagem existente
-    
+    remover()
+    divResultado.classList.remove('remover')
+
     let tSangue = document.getElementById('resultado');  // Seleciona o elemento onde o conteúdo sobre tipos sanguíneos 
 
     let sangue = "" // Inicializa uma string vazia
@@ -13,7 +23,7 @@ function sobreSangue(){
             <article class="tipos-sangue"  id=${tipo.ids} >
                 <h2>${tipo.Tipo}</h2>
                 <img src=${tipo.imagem}>
-                <p>${tipo.descrição}</p>
+                <p>${tipo.descricao}</p>
                 <a target="_blank" href="https://bvsms.saude.gov.br/bvs/publicacoes/imuno_hematologia_laboratorial.pdf">Saiba Mais</a>
             </article>
             
@@ -22,22 +32,7 @@ function sobreSangue(){
 
     }
         // Adiciona informações sobre o fator Rh
-        sangue += `<section class="tipos-sangue"  id="tipos-rh"> 
-                <h2>Fator Rh</h2>
-                <p>
-                    Antígeno também presente nas hemácias e é considerado para a transfusão.
-                    
-                </p>
-                <h3>Rh+</h3>
-                <img src="imagens/rh+.png" alt="">
-                <p>Que possuem esse fator e só podem doar para eles mesmos.</p>
-                <h3>Rh-</h3>
-                <img src="imagens/rh-.png" alt="">
-                <p>Não possui esse fator e  pode doar para os que possuem ou não, mas só podem recber deles mesmo.</p>
-
-                <a target="_blank" href="https://bvsms.saude.gov.br/bvs/publicacoes/imuno_hematologia_laboratorial.pdf">Saiba Mais</a>
-            </section>
-            `
+        sangue += fatorRh
 
 
         tSangue.innerHTML = sangue
@@ -46,7 +41,8 @@ function sobreSangue(){
 // Funções estoque(), comoDoar() e ondeDoar() possuem semantica semelhantes
 
 function estoque(){
-    imagem.remove()
+    remover() //Remove a imagem existente
+    divResultado.classList.remove('remover')
 
     let sobreEstoque = document.getElementById('resultado'); // Insere o HTML gerado no elemento 'resultado'
 
@@ -63,61 +59,22 @@ function estoque(){
 }
 
 function comoDoar(){
-    imagem.remove()
+    remover()
+    divResultado.classList.remove('remover')
+
     let como = document.getElementById('resultado')
 
     conteudoComo = ""
 
-    conteudoComo +=`  <div class="comoDoar">
-            
-                <ul class="">
-                    <h2>Requisitos básicos - <a target="_blank" href="https://www.prosangue.sp.gov.br/artigos/requisitos_basicos_para_doacao.html">Saiba mais</a></h2>
-                    <li> Estar em boas condições de saúde.</li>
-    
-                    <li> Ter entre 16 e 69 anos, desde que a primeira doação tenha sido feita até 60 anos .</li>
-    
-                    <li> Pesar no mínimo 50kg.</li>
-    
-                    <li> Estar descansado (ter dormido pelo menos 6 horas nas últimas 24 horas).</li>
-    
-                    <li> Estar alimentado (evitar alimentação gordurosa nas 4 horas que antecedem a doação).</li>
-    
-                    <li> Apresentar documento original com foto recente, que permita a identificação do candidato.</li>
-                </ul>
-                <ul>
-                    <h2>Impedimentos temporários</h2>
-                    <li>Resfriado: aguardar 7 dias após desaparecimento dos sintomas.</li>
-    
-                    <li>Gravidez.</li>
-    
-                    <li>90 dias após parto normal e 180 dias após cesariana.</li>
-    
-                    <li>Ingestão de bebida alcoólica nas 12 horas que antecedem a doação.</li>
-                </ul>
-    
-                <ul>
-                    <h2>Impedimentos definitivos - <a  target="_blank" href=" https://www.prosangue.sp.gov.br/artigos/quem_nao_pode_doar.html">Saiba mais</a></h2></h2>
-   
-                    <li>Hepatite após os 11 anos de idade.</li> 
-                    <li>Uso de drogas ilícitas injetáveis.</li>
-                    <li>Doença de Parkinson.</li>
-                    
-                        <ul><h3>Evidência clínica ou laboratorial das seguintes doenças infecciosas transmissíveis pelo sangue:</h3>
-                            <li>Hepatites B e C.</li>
-                            <li>AIDS (vírus HIV).</li>
-                            <li>doenças associadas aos vírus HTLV I e II.</li>
-                            <li>Uso de drogas ilícitas injetáveis.</li>
-                            <li>Doença de Chagas.</li>
-                        </ul> 
-                    
-                </ul>
-            </div>`
+    conteudoComo += comoDoarContent
 
     como.innerHTML = conteudoComo
 }
 
 function ondeDoar(){
-    imagem.remove()
+    remover() //Remove a imagem existente
+    divResultado.classList.remove('remover')
+    
     let localOndeDoar = document.getElementById('resultado')
 
     let escolhaLocal = ''
@@ -137,9 +94,9 @@ function ondeDoar(){
 
                     
                         <ul>       
-                            <li id=${local.localID}> 
-                                    <span>${local.localNome}</span>
-                                    <p>${local.endereco}</p>
+                            <li id=${local.ids}> 
+                                    <span>${local.Tipo}</span>
+                                    <p>${local.descricao}</p>
                             </li>
                             
                         </ul>`
@@ -154,3 +111,102 @@ function ondeDoar(){
 
     localOndeDoar.innerHTML = escolhaLocal
 }
+
+function pesquisar(){
+    let campoPesquisa =document.getElementById('procurar').value
+    let  respostaDaPesquisa = document.getElementById('resposta')
+
+    divResposta.classList.remove('remover')
+    divResultado.classList.add('remover')
+
+
+    console.log(campoPesquisa)
+
+    if (!campoPesquisa){
+        respostaDaPesquisa.innerHTML = '<h2>Digite alguma coisa!</h2>'
+        return
+    } 
+    
+    campoPesquisa = campoPesquisa.toLowerCase()
+
+    let resposta = '';
+    let tipo = '';
+    let endereco = '';
+    let tag = '';
+
+    for (let objeto of sangueTipos){
+
+        tipo = objeto.Tipo.toLowerCase()
+        endereco = objeto.descricao.toLowerCase()
+        tag = objeto.tags.toLowerCase()
+
+        if (tipo.includes(campoPesquisa)|| endereco.includes(campoPesquisa)||tag.includes(campoPesquisa)){
+
+            
+
+            resposta += `
+            <article class="tipos-sangue"  id=${objeto.ids} >
+                <h2>${objeto.Tipo}</h2>
+                <img src=${objeto.imagem}>
+                <p>${objeto.descricao}</p>
+                <a target="_blank" href="https://bvsms.saude.gov.br/bvs/publicacoes/imuno_hematologia_laboratorial.pdf">Saiba Mais</a>
+            </article>
+            
+            
+        `
+            
+        }
+
+       
+
+    }
+
+    for (let item of localDeDoar){
+
+        tipo = item.Tipo.toLowerCase()
+        endereco = item.descricao.toLowerCase()
+        tag = item.tags.toLowerCase()
+
+        if ( tipo.includes(campoPesquisa) || endereco.includes(campoPesquisa)||tag.includes(campoPesquisa)){
+        
+            resposta += `
+            <div id="comoDoar" class="comoDoar">
+                            <h2 id="hemocentro" >Hemocentros  </h2>
+                            <a target="_blank" href="https://www.prosangue.sp.gov.br/uploads/arquivos/MapaA3.pdf"> >> Procure no seu estado << </a>
+                            <h5 ><a  target="_blank" href="https://www.prosangue.sp.gov.br/hemocentros/Default.html">Fundação Pró-Sangue Hemocentro de São Paulo</a></h5>
+        
+            `
+            
+            resposta += `
+                        <ul>       
+                            <li id=${item.ids}> 
+                                    <span>${item.Tipo}</span>
+                                    <p>${item.descricao}</p>
+                            </li>
+                            
+                        </ul>`
+
+            
+            resposta += `</div>`            
+        }
+
+    }
+
+    for (let importante of oQuePrecisa){
+
+        precisa = importante.tags.toLowerCase()
+
+        if(precisa.includes(campoPesquisa)){
+            resposta += comoDoarContent
+        }
+    }
+
+    if (!resposta) {
+        resposta = "<h2>Nada foi encontrado!</h2>"
+    }
+
+    respostaDaPesquisa.innerHTML = resposta
+
+}
+
+

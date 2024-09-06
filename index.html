@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doação de Sangue</title>
+    <link rel="stylesheet" href="src/styles/main.css">
+</head>
+<body>
+    <header>
+        <div ><img src="icones/bloodtype_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt=""><h1> Doação de Sangue</h1></div>
+        <form class="form-header">
+            <input type="text" id="procurar" placeholder="Descubra">
+            <button id="button-lupa" type="button"><img src="icones/search.svg" alt="Ícone de lupa para iniciar uma pesquisa."></button>
+        </form>
+        
+    </header>
+    
+    
+
+    <main>
+        <section id="tip-sang">
+            <h4>Cada gota conta. Doe sangue e faça a diferença!</h4>
+            <section id="topicos" >
+                <button   onclick="sobreSangue()">Tipos Sanguíneos</button>
+                <button onclick="comoDoar()" >Como Doar Sangue</button>
+                <button onclick="ondeDoar()" >Onde Doar Sangue</button>
+                <button onclick="estoque()">Estoque de Sangue</button>
+            </section>
+            
+            <img id="super" src="imagens/bannercampanha.png" alt="">
+
+            
+
+            <div id="resultado"></div>
+            
+            <a href="https://www.prosangue.sp.gov.br/hemocentros/Default.html"></a>
+
+        </section>
+
+        
+
+    </main>
+        
+<footer>
+    <p> <a href="https://github.com/YasminVenceslau" target="_blank" title="Conheça o meu GitHub">Yasmin Venceslau</a>   ©  Todos os direitos reservados - 2024</p>
+</footer>
+
+    
+    <script src="/src/scripts/main.js"></script>
+    <script src="/src/scripts/tiposSang.js"></script>
+    <script src="src/scripts/postos.js"></script>
+    
+
+</body>
+
+</html>

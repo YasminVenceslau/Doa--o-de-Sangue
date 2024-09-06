@@ -1,0 +1,223 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+/* Define cores principais e secundárias */
+:root {
+    --cor-principal: #A60D1A; /* Cor principal */
+    --cor-secundaria: #BF1534; /* Cor secundária */
+}
+
+/* Limpa margens e padding padrão */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+}
+
+
+a{
+    text-decoration: none;
+    color: var(--cor-principal);
+}
+a:hover{
+    color: black;
+    text-decoration: underline;
+}
+
+li{
+    list-style: inside url(/icones/caret-right.svg);
+    padding: 10px;
+    padding-bottom: 5px ;
+    color: black;
+    text-align: justify;
+    margin-bottom: 10px;
+    
+}
+
+span{
+    color: black;
+    font-weight: bold;
+}
+
+
+/* Configura imagem de fundo para o corpo */
+body {
+    background-image: url("/imagens/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header div {
+    display: flex; /* Cria um container flexbox */
+    justify-content: space-between; /* Distribui elementos uniformemente */
+}
+
+/* Estiliza o cabeçalho */
+header {
+    border-bottom: 1px solid var(--cor-principal); /* Adiciona uma borda inferior */
+    display: flex; /* Cria um container flexbox */
+    justify-content: space-between; /* Distribui elementos uniformemente */
+    padding: 20px; /* Adiciona espaço interno */
+    background-color: white; /* Define cor de fundo */
+    color: #A60D1A;
+}
+
+/* Estiliza inputs e botões dentro do cabeçalho */
+header input, header button {
+    border: none; /* Remove bordas */
+    padding: 10px; /* Adiciona espaço interno */
+    width: 200px; /* Define largura */
+}
+
+/* Estiliza o botão de lupa */
+#button-lupa, #topicos button {
+    cursor: pointer; /* Muda o cursor para uma mão */
+    line-height: 1.5; /* Ajusta a altura da linha */
+    background-color: transparent; /* Torna o fundo transparente */
+    border: 2px solid transparent; /* Remove borda sólida */
+    padding: 6px 12px; /* Adiciona espaço interno */
+    font-size: 1rem; /* Define tamanho da fonte */
+    border-radius: .25rem; /* Arredonda as bordas */
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out; /* Adiciona efeitos de transição */
+    color: var(--cor-principal); /* Define cor inicial do texto */
+    border-color: var(--cor-principal); /* Define cor inicial da borda */
+}
+
+/* Estiliza o campo de busca */
+#procurar {
+    outline-color: #A60D1A; /* Define a cor do contorno quando focado */
+}
+
+/* Estiliza o botão de lupa quando o mouse está sobre ele */
+#button-lupa:hover, #topicos button:hover {
+    color: #fff; /* Muda a cor do texto para branco */
+    background-color: var(--cor-principal); /* Muda a cor de fundo para a cor principal */
+    border-color: white; /* Muda a cor da borda para branco */
+}
+
+main h4, footer{
+    text-align: center;
+    font-size: 20px;
+    background-color: var(--cor-principal); 
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    
+}
+
+#super{ 
+    background-color: #BF1534;
+    display: flex;
+    margin: 20px auto;
+    width: 550px;
+    border-radius:1% ;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.175);
+
+}
+
+#topicos{
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+}
+
+#topicos button{
+    cursor: pointer;
+    margin:0 5px ;
+    padding: 5px;
+    background: transparent;
+    color: var(--cor-principal); /* Define cor inicial do texto */
+    border-color: var(--cor-principal); /* Define cor inicial da borda */
+}
+
+.tipos-sangue img{
+    width: 50px;
+}
+
+#tip-sang{
+    
+    
+    height: 65vh; /* Altura máxima da caixa de resultados */
+    overflow-y: auto; /* Adiciona rolagem vertical se necessário */
+    
+    padding: 1rem; /* Espaçamento interno */
+    border-radius: 0.6rem; /* Borda arredondada */
+}
+
+#tip-sang article{
+    margin-bottom: 20px;
+
+}
+
+#SangA,#SangB,#SangAB,#SangO,#tipos-rh{
+    background-color: #fff;
+    background-image: url(/imagens/fundo2.png);
+    
+   
+}
+
+#tipos-rh{
+    background-image: url(/imagens/fundo3.png);
+}
+
+.tipos-sangue {
+    text-align: center;
+    padding: 30px;
+    background-color: #bf15341b;
+    
+    margin: 20px auto;
+    width: 600px;
+}
+.tipos-sangue p{
+    padding: 5px 0;
+}
+
+
+img #estoqueSangue{
+    width: 500px;
+}
+
+
+.comoDoar  {
+    width: 800px;
+    margin: 20px auto;
+    text-align: center;
+    background-color: #bf15341b;
+    color: var(--cor-principal);
+    padding: 10px;
+    border-radius: 5%;
+
+    
+}
+
+.comoDoar p{
+ font-style: italic;
+}
+.comoDoar h5{
+    padding: 5px 0;
+    color: #BF1534;
+}
+
+.estoqueSangue{
+    text-align: center;
+    margin: 20px auto;
+    width: 350px;
+    
+}
+
+footer{
+    padding: 0;
+    position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+footer a{
+    color: #fff;
+    
+}
+
+

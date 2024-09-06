@@ -150,5 +150,7 @@ function ondeDoar(){
 
     escolhaLocal += `</div>`
 
+    
+
     localOndeDoar.innerHTML = escolhaLocal
 }
